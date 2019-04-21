@@ -1,0 +1,40 @@
+{
+  "name": "phonon-site",
+  "version": "1.0.0",
+  "description": "Site and documentation for Phonon v2",
+  "author": "qathom",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint",
+    "generate:markdown": "node ./bin/markdown",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@nuxtjs/markdownit": "^1.2.3",
+    "axios": "^0.18.0",
+    "clipboard": "^2.0.4",
+    "cross-env": "^5.2.0",
+    "highlight.js": "^9.15.6",
+    "nuxt": "^2.6.1",
+    "nuxt-fontawesome": "^0.4.0",
+    "vue-scrollto": "^2.15.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-vue": "^5.2.2",
+    "html-loader": "^0.5.5",
+    "markdown-loader": "^5.0.0",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.11",
+    "push-dir": "^0.4.1",
+    "sass-loader": "^7.1.0"
+  }
+}
