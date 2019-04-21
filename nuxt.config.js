@@ -1,7 +1,15 @@
-const pkg = require('./package');
+import pkg from './package';
+import menu from './utils/menu';
+
+const dynamicRoutes = [];
+menu.forEach((entry) => {
+  entry.items.forEach(({ key }) => {
+    dynamicRoutes.push(`${entry.url}/${key}`);
+  });
+});
 
 module.exports = {
-  // mode: 'spa',
+  mode: 'spa',
 
   /*
   ** Headers of the page
@@ -39,11 +47,14 @@ module.exports = {
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [
-  ],
+  plugins: [],
 
   router: {
     linkActiveClass: 'active'
+  },
+
+  generate: {
+    routes: dynamicRoutes,
   },
 
   /*
