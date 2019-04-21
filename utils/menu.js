@@ -2,6 +2,7 @@ export default [
   {
     key: 'index',
     route: 'docs-getting-started-id',
+    url: 'docs/getting-started',
     label: 'Getting started',
     items: [
       { key: 'quick-start', label: 'Quick start' },
@@ -13,6 +14,7 @@ export default [
   {
     key: 'index',
     route: 'docs-components-id',
+    url: 'docs/components',
     label: 'Components',
     items: [
       { key: 'accordion', label: 'Accordion' },
@@ -40,6 +42,7 @@ export default [
   {
     key: 'index',
     route: 'docs-utilities-id',
+    url: 'docs/utilities',
     label: 'Utilities',
     items: [
       { key: 'borders', label: 'Borders' },
