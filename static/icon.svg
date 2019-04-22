@@ -14,8 +14,11 @@
    viewBox="0 0 60.248993 60.249001"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.2 2405546, 2018-03-11"
-   sodipodi:docname="icon.svg">
+   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   sodipodi:docname="icon.svg"
+   inkscape:export-filename="/home/qathom/Workspaces/Web/phonon-docs/static/icon-250.png"
+   inkscape:export-xdpi="105.39596"
+   inkscape:export-ydpi="105.39596">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,15 +29,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.1213203"
-     inkscape:cx="155.00666"
+     inkscape:cx="58.604434"
      inkscape:cy="120.51476"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1006"
+     inkscape:window-height="1007"
      inkscape:window-x="0"
-     inkscape:window-y="32"
+     inkscape:window-y="31"
      inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -48,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
