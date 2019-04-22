@@ -21,6 +21,7 @@ body,
   min-height: 100% !important;
 }
 
+// Header with angle at the bottom
 .angle {
   width: 100%;
   height: 40px;
@@ -30,7 +31,7 @@ body,
   }
 }
 
-// index
+// Home page
 .header-main {
   .main-container {
     min-height: 75vh;
@@ -60,7 +61,7 @@ body,
   color: #333;
 }
 
-// util for navbar in docs layout
+// Util for navbar in docs layout
 .navbar .full-width {
   max-width: none;
 }
@@ -68,7 +69,6 @@ body,
 .sidebar {
   top: $heightNavbar;
   height: calc(100% - #{$heightNavbar});
-  padding-bottom: $heightNavbar;
 }
 
 .menu {
@@ -116,6 +116,7 @@ body,
   background: rgba(0, 0, 0, .01);
 }
 
+// Documentation
 .content {
   padding: 80px 15px;
 }
@@ -127,5 +128,10 @@ body,
 
 .page {
   max-width: 1200px;
-  background: red;
+
+  // Static examples of notifications
+  // Make sure they are going under the navbar
+  .notification {
+    z-index: 1;
+  }
 }
