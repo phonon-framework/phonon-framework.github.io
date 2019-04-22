@@ -4,7 +4,7 @@ A modal is a flexible window that is visible on top of the main window.
 
 <hr />
 
-<div class="p-4" style="position:relative;background-color: #eee;">
+<div style="position:relative;padding:45px;background-color: #bbb;">
   <div class="modal show" tabindex="-1" role="modal" style="position:static;width: 350px;">
     <div class="modal-inner" role="document">
       <div class="modal-content">
@@ -120,7 +120,7 @@ By default, the modal is centered vertically and horizontally. If you want the m
         <p>Modal body text goes here.</p>
       </div>
       <div class="modal-footer">
-        <div class="btn-group float-right" role="group" aria-label="Basic example">
+        <div class="btn-group" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -172,16 +172,33 @@ const modal = phonon.modal({
 
 ### Prompt modal
 
-<button class="btn btn-primary" id="tryPromptModal">Try it</button>
+```html
+<!-- Button trigger modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target="#tryPromptModal">Launch prompt modal</button>
 
-<script>
-document.querySelector('#tryPromptModal').addEventListener('click', function () {
-  phonon.prompt({
-    title: 'Modal title',
-    message: 'Modal body text goes here.',
-  }).show();
-});
-</script>
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="modal" id="tryPromptModal">
+  <div class="modal-inner" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="icon-close" data-dismiss="modal" aria-label="Close">
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+        <input class="form-control" type="text" value="" placeholder="Enter email address">
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
 
 ```js
 // ES6
@@ -206,16 +223,33 @@ prompt.getInputValue() // only available with prompt objects
 
 ### Confirm modal
 
-<button class="btn btn-primary" id="tryConfirmModal">Try it</button>
+```html
+<!-- Button trigger modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target="#tryConfirmModal">Launch confirm modal</button>
 
-<script>
-document.querySelector('#tryConfirmModal').addEventListener('click', function () {
-  phonon.confirm({
-    title: 'Quit',
-    message: 'Are you sure you want to quit?',
-  }).show();
-});
-</script>
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="modal" id="tryConfirmModal">
+  <div class="modal-inner" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="icon-close" data-dismiss="modal" aria-label="Close">
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
 
 ```js
 // ES6
@@ -235,23 +269,37 @@ const confirm = phonon.confirm({
 
 ### Loader modal
 
-<button class="btn btn-primary" id="tryLoaderModal">Try it</button>
+```html
+<!-- Button trigger modal -->
+<button class="btn btn-primary" data-toggle="modal" data-target="#tryLoaderModal">Launch loader modal</button>
 
-<script>
-document.querySelector('#tryLoaderModal').addEventListener('click', function () {
-  var loader = phonon.modalLoader({
-    title: 'Loading',
-    message: 'Please wait 3 seconds.',
-    cancelable: false,
-  })
-
-  loader.show();
-
-  setTimeout(function () {
-    loader.hide();
-  }, 3000);
-});
-</script>
+<!-- Modal -->
+<div class="modal" tabindex="-1" role="modal" id="tryLoaderModal">
+  <div class="modal-inner" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="icon-close" data-dismiss="modal" aria-label="Close">
+          <span class="icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Working...</p>
+        <div class="mx-auto text-center">
+          <div class="loader mx-auto d-block">
+            <div class="loader-spinner loader-spinner-animated"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
 
 ```js
 // ES6
@@ -275,26 +323,6 @@ Each modal type (normal, prompt, confirm and prompt) supports custom buttons.
 Note that the event of the button **must be unique**.
 The click event of a button will fire the associated callback automatically.
 
-<button class="btn btn-primary" id="tryCustomButtons">Try it</button>
-
-<script>
-document.querySelector('#tryCustomButtons').addEventListener('click', function () {
-  phonon.modal({
-    title: 'Modal title',
-    message: 'Modal body text goes here.',
-    buttons: [
-      { event: 'cancel', text: 'Cancel', dismiss: true, class: 'btn btn-secondary' },
-      { event: 'confirm', text: 'Ok', dismiss: true, class: 'btn btn-primary' },
-    ],
-    onCancel: () => {
-      phonon.modal({ title: 'Event', message: 'Cancel' }).show();
-    },
-    onConfirm: () => {
-      phonon.modal({ title: 'Event', message: 'Confirm' }).show();
-    },
-  }).show();
-});
-</script>
 
 ```js
 const modal = phonon.modal({

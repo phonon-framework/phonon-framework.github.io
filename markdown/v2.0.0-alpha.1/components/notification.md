@@ -4,8 +4,8 @@ A notification is a floating message on top of the main window.
 
 <hr />
 
-<div class="mx-auto" style="padding:8px;background:#eee;">
-  <div class="notification notification-primary show mx-auto" style="top:0;bottom:auto;position:relative;margin-bottom:0">
+<div class="mx-auto" style="padding:45px;background:#eee;">
+  <div class="notification notification-primary show mx-auto" style="top:0;bottom:auto;position:relative;margin:0">
     <div class="notification-inner">
       <div class="notification-header">
         <h5 class="notification-title">Heads up!</h5>
@@ -22,16 +22,6 @@ A notification is a floating message on top of the main window.
 ## Live demo
 
 <button class="btn btn-primary" id="notificationDemo">Show</button>
-<script>
-  document.querySelector('#notificationDemo').addEventListener('click', function() {
-    phonon.notification({
-      message: 'Hello',
-      directionY: 'top',
-      directionX: 'right',
-      timeout: 1500,
-    }).show();
-  });
-</script>
 
 ```html!
 <div class="notification" id="myNotification">
@@ -267,19 +257,13 @@ The below example defines a way of getting valid consent for your website.
 
 <button class="btn btn-primary" id="buttonNotificationCookie">Try it</button>
 
-<script>
-document.querySelector('#buttonNotificationCookie').addEventListener('click', function () {
-  phonon.notification({
-    element: '#notificationCookie',
-    background: 'dark',
-  }).show();
-});
-</script>
-
 ```html
 <div class="notification notification-dark" style="width: 500px;max-width: 80%;" id="notificationCookie">
   <div class="notification-inner">
-    <div class="message mr-0">
+    <div class="notification-header">
+      <h5 class="notification-title">Heads up!</h5>
+    </div>
+    <div class="notification-body">
       <div class="float-right">
         <button class="btn btn-primary btn-sm" type="button" data-dismiss="notification">Save</button>
         <button class="btn btn-primary btn-sm" type="button" data-toggle="collapse" data-target="#collapseSettings">Edit settings</button>

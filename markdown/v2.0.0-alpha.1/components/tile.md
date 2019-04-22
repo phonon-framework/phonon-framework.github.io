@@ -19,25 +19,29 @@ A tile is an object usually square or rectangular in shape.
 ## Ideas
 
 ```html
-<div class="d-flex align-items-stretch">
-  <div class="tile p-4 tile-light text-left w-25">
-    <h4>Hotline</h4>
-    <hr align="left" class="emphasis w-lg h-sm mt-2" />
-    <p>
-      <a href="tel:0800-000-000">0800 000 000</a>
-    </p>
-    <p>
-      Monday to Friday, 8am to 6pm<br />
-      Max. USD 0.08/min
-    </p>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="tile p-4 tile-light text-left w-100">
+      <h4>Hotline</h4>
+      <hr align="left" class="emphasis w-lg h-sm mt-2" />
+      <p>
+        <a href="tel:0800-000-000">0800 000 000</a>
+      </p>
+      <p>
+        Monday to Friday, 8am to 6pm<br />
+        Max. USD 0.08/min
+      </p>
+    </div>
   </div>
-  <div class="tile ml-2 p-4 tile-light text-left w-25">
-    <h4>Contact</h4>
-    <hr align="left" class="emphasis w-lg h-sm mt-2" />
-    <p>Questions or suggestions?</p>
-    <p>
-      <a href="#">Write to us</a>
-    </p>
+  <div class="col-sm-6">
+    <div class="tile p-4 tile-light text-left w-100">
+      <h4>Contact</h4>
+      <hr align="left" class="emphasis w-lg h-sm mt-2" />
+      <p>Questions or suggestions?</p>
+      <p>
+        <a href="#">Write to us</a>
+      </p>
+    </div>
   </div>
 </div>
 ```
