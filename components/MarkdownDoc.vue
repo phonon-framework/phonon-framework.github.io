@@ -50,6 +50,8 @@ export default {
         // highlight
         hljs.highlightBlock(code);
       });
+
+      this.setCustomButtons();
     });
   },
   methods: {
@@ -90,6 +92,29 @@ export default {
           event.target.innerHTML = text;
         }, 1000);
       });
+    },
+    setCustomButtons() {
+      const notifButton = this.$el.querySelector('#notificationDemo');
+      if (notifButton) {
+        notifButton.addEventListener('click', () => {
+          phonon.notification({
+            title: 'Hello',
+            message: 'Text goes here',
+            directionY: 'top',
+            directionX: 'right',
+            timeout: 1500,
+          }).show();
+        });
+      }
+
+      const notifConsentButton = this.$el.querySelector('#buttonNotificationCookie');
+      if (notifConsentButton) {
+        notifConsentButton.addEventListener('click', () => {
+          phonon.notification({
+            element: '#notificationCookie',
+          }).show();
+        });
+      }
     },
   },
 };
