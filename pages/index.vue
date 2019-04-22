@@ -44,9 +44,9 @@
             </div>
             <div class="col-sm-6">
               <img
-                src="~/static/icon.svg"
+                src="~/static/icon-250.png"
                 width="160px"
-                class="mx-auto d-block"
+                class="mx-auto d-none d-md-block"
                 alt=""
               >
             </div>

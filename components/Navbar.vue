@@ -10,9 +10,9 @@
           class="navbar-title"
         >
           <img
-            src="~/static/icon.svg"
-            width="30"
-            height="30"
+            src="~/static/icon-64.png"
+            width="35"
+            height="35"
             class="d-inline-block align-top"
             alt=""
           >
