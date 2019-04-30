@@ -1,6 +1,6 @@
 <template>
   <div class="h-100">
-    <navbar @menu="$refs.offCanvas.show()" />
+    <navbar @menu="$refs.offCanvas.toggle()" />
     <main>
       <doc-off-canvas ref="offCanvas" />
       <example-off-canvas />

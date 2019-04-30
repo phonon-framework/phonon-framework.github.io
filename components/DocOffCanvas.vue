@@ -92,6 +92,9 @@ export default {
     hide() {
       this.offCanvas.hide();
     },
+    toggle() {
+      this.offCanvas.toggle();
+    },
   },
 };
 </script>
