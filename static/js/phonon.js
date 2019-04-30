@@ -1337,7 +1337,6 @@
         }
         ModalLoader.prototype.show = function () {
             _super.prototype.show.call(this);
-            console.log(this.getElement());
             this.loader = new Loader({ element: this.getElement().querySelector('.loader') });
             this.loader.animate(true);
             return true;
@@ -1659,30 +1658,23 @@
             });
             document.addEventListener(utils.Event.CLICK, function (event) {
                 var target = event.target;
-                console.log('working');
-                console.log(target);
                 if (!target) {
                     return;
                 }
                 var toggleEl = utils.Selector.closest(target, "[data-toggle=\"" + className + "\"]");
                 if (toggleEl) {
-                    console.log('is toggle');
-                    console.log(toggleEl);
                     var selector = toggleEl.getAttribute('data-target');
                     if (!selector) {
                         return;
                     }
-                    console.log('selector');
                     var offCanvas = document.querySelector(selector);
                     if (!offCanvas) {
                         return;
                     }
-                    console.log('offcanvas');
                     var offCanvasComponent = utils.Observer.getComponent(className, { element: offCanvas });
                     if (!offCanvasComponent) {
                         return;
                     }
-                    console.log('togle');
                     target.blur();
                     offCanvasComponent.toggle();
                 }
