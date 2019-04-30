@@ -101,7 +101,7 @@ Navbar is a responsive navigation containing links.
 
 ## Horizontal alignment
 
-`.navbar-left`, `.navbar-center` and `.navbar-right` allow you to choose the horizontal alignment.
+`.navbar-left` and `.navbar-right` allow you to choose the horizontal alignment.
 
 ```html
 <nav class="navbar navbar-primary navbar-expand-lg sticky-top">
@@ -117,9 +117,6 @@ Navbar is a responsive navigation containing links.
         <a href="#" class="nav-link disabled">Disabled</a>
       </li>
     </ul>
-  </div>
-  <div class="navbar-center">
-    <a class="navbar-title" href="#">Logo</a>
   </div>
 
   <div class="navbar-right">
@@ -147,9 +144,6 @@ Include a parent `.container` to set a maximum width.
           <a href="#" class="nav-link disabled">Disabled</a>
         </li>
       </ul>
-    </div>
-    <div class="navbar-center">
-      <a class="navbar-title" href="#">Logo</a>
     </div>
 
     <div class="navbar-right">
