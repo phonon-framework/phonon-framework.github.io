@@ -14,7 +14,7 @@
               <h1 class="h2 text-white font-weight-light mb-4">
                 <b>Phonon</b> is a <b>responsive</b> <b>front-end</b> framework with a focus on simplicity and flexibility
               </h1>
-              <p class="h5 text-justify text-white">
+              <p class="h5 text-justify font-weight-light text-white">
                 Phonon is a front-end framework made with <strong>mobile and desktop</strong> in mind.
                 It offers clear and neutral components that integrate best practices
                 and ideas coming from well-known design styles.
