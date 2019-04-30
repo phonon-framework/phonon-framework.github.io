@@ -1,5 +1,6 @@
 import pkg from './package';
 import menu from './utils/menu';
+import meta from './meta';
 
 const dynamicRoutes = [];
 menu.forEach((entry) => {
@@ -15,14 +16,16 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    meta: [{ 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' }],
-    title: pkg.name,
+    title: meta.title,
     meta: [
+      { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description },
       { name: 'msapplication-TileColor', content: '#2b5797' },
       { name: 'theme-color', content: '#ffffff' },
+      { name: 'keywords', content: '' },
+      { name: 'description', content: 'A light weight, scalable and customizable front-end Website/Webapps Framework with clear, simple and modern UI components.' },
     ],
     link: [
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' },
