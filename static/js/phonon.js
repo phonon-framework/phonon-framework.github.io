@@ -169,8 +169,7 @@
     };
 
     function closest(element, selector) {
-        var matches = Element.prototype.msMatchesSelector ||
-            Element.prototype.webkitMatchesSelector;
+        if (!Element.prototype.matches) ;
         var el = element;
         do {
             if (el.matches(selector)) {
@@ -1660,23 +1659,30 @@
             });
             document.addEventListener(utils.Event.CLICK, function (event) {
                 var target = event.target;
+                console.log('working');
+                console.log(target);
                 if (!target) {
                     return;
                 }
                 var toggleEl = utils.Selector.closest(target, "[data-toggle=\"" + className + "\"]");
                 if (toggleEl) {
+                    console.log('is toggle');
+                    console.log(toggleEl);
                     var selector = toggleEl.getAttribute('data-target');
                     if (!selector) {
                         return;
                     }
+                    console.log('selector');
                     var offCanvas = document.querySelector(selector);
                     if (!offCanvas) {
                         return;
                     }
+                    console.log('offcanvas');
                     var offCanvasComponent = utils.Observer.getComponent(className, { element: offCanvas });
                     if (!offCanvasComponent) {
                         return;
                     }
+                    console.log('togle');
                     target.blur();
                     offCanvasComponent.toggle();
                 }
@@ -1818,16 +1824,13 @@
             }
             if (!this.showAside) {
                 var backdrop_1 = this.getBackdrop();
-                console.log('NOT ASIDE');
                 if (!backdrop_1) {
                     return true;
                 }
-                console.log('BACKDROP');
                 var onHidden_1 = function () {
                     if (_this.animate) {
                         element.classList.remove('animate');
                     }
-                    console.log('BYE');
                     backdrop_1.removeEventListener(utils.Event.TRANSITION_END, onHidden_1);
                     _this.triggerEvent(utils.Event.HIDDEN);
                     _this.removeBackdrop();
@@ -1858,8 +1861,6 @@
             }
         };
         OffCanvas.prototype.getBackdrop = function () {
-            console.log('SELECTOR');
-            console.log("." + this.backdropSelector + "[data-id=\"" + this.getId() + "\"]");
             return document.querySelector("." + this.backdropSelector + "[data-id=\"" + this.getId() + "\"]");
         };
         OffCanvas.prototype.removeBackdrop = function () {
