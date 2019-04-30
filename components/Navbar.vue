@@ -82,6 +82,7 @@
           class="navbar-toggle icon-hamburger"
           type="button"
           data-toggle="offcanvas"
+          data-target="#docOffCanvas"
           @click.prevent="$emit('menu')"
         >
           <span
