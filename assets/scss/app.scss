@@ -2,6 +2,9 @@ $secondaryColor: rgb(134, 134, 134);
 $paddingNavbar: 56px;
 $heightNavbar: 60px;
 
+// TMP @todo use default scss files when phonon alpha is released
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
 html,
 body {
   height: 100%;
@@ -10,6 +13,13 @@ body {
 
 body {
   margin: 0;
+}
+
+// apply font
+body,
+.nav-title span,
+.nav-link {
+  font-family: $font-family-sans-serif !important;
 }
 
 html,
