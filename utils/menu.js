@@ -8,7 +8,7 @@ export default [
       { key: 'quick-start', label: 'Quick start' },
       { key: 'custom-builds', label: 'Custom builds' },
       { key: 'theming', label: 'Theming' },
-      { key: 'migration', label: 'Migration' },
+      // { key: 'migration', label: 'Migration' }, // @todo add migration guide when done
     ],
   },
   {

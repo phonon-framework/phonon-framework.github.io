@@ -96,6 +96,7 @@
                 At that time, the main focus was mobile.
               </p>
 
+              <!--
               <p>
                 Coming from v1.x?
                 <nuxt-link
@@ -105,6 +106,7 @@
                   Read the migration guide
                 </nuxt-link>
               </p>
+              -->
             </div>
           </div>
         </div>
