@@ -2,10 +2,38 @@ import pkg from './package';
 import menu from './utils/menu';
 import meta from './meta';
 
+/*
+ * Build the list of dynamic routes
+ * for the SPA
+ */
 const dynamicRoutes = [];
 menu.forEach((entry) => {
   entry.items.forEach(({ key }) => {
     dynamicRoutes.push(`${entry.url}/${key}`);
+  });
+});
+/*
+ * Build the list of dynamic routes
+ * for the sitemap
+ */
+const sitemapRoutes = [];
+
+// Home page
+sitemapRoutes.push({
+  url: 'https://phonon-framework.github.io',
+  changefreq: 'monthly',
+  priority: 1,
+  lastmodISO: new Date().toISOString(),
+});
+
+menu.forEach((entry) => {
+  entry.items.forEach(({ key }) => {
+    sitemapRoutes.push({
+      url: `${entry.url}/${key}`,
+      changefreq: 'monthly',
+      priority: 0.5,
+      lastmodISO: new Date().toISOString(),
+    });
   });
 });
 
@@ -28,14 +56,17 @@ module.exports = {
       { name: 'description', content: 'A light weight, scalable and customizable front-end Website/Webapps Framework with clear, simple and modern UI components.' },
     ],
     link: [
+      // External resources
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' },
       { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
-      // favicons
+      // Favicons
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' },
       { rel: 'manifest', href: '/favicons/site.webmanifest' },
       { rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg', color: '#3271d1' },
+      // Sitemap
+      { rel: 'sitemap', href: '/sitemap.xml', type: 'application/xml', title: 'Sitemap' },
     ],
     script: [
       { src: '/js/phonon.js' },
@@ -71,7 +102,19 @@ module.exports = {
   /*
   ** Nuxt.js modules
   */
-  modules: [,
+  modules: [
+    // Sitemap
+    '@nuxtjs/sitemap',
+    // Robot.txt
+    ['@nuxtjs/robots', {
+      UserAgent: '*',
+      Sitemap: 'https://phonon.quarkdev.com/sitemap.xml',
+    }],
+    // Google Analytics
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-55826278-2',
+    }],
+    // FontAwesome
     ['nuxt-fontawesome', {
       component: 'fa',
       imports: [
@@ -86,10 +129,20 @@ module.exports = {
         },
       ]
     }],
+    // Markdown
     '@nuxtjs/markdownit',
     ['vue-scrollto/nuxt', { duration: 300 }],
   ],
 
+  // Sitemap config
+  sitemap: {
+    hostname: 'https://phonon-framework.github.io',
+    gzip: false,
+    exclude: [],
+    routes: sitemapRoutes,
+  },
+
+  // Markdown config
   markdownit: {
     preset: 'default',
     linkify: true,
@@ -147,8 +200,8 @@ module.exports = {
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /(node_modules)/
-        })
+        });
       }
-    }
+    },
   },
-}
+};
