@@ -97,6 +97,15 @@
                 At that time, the main focus was mobile.
               </p>
 
+              <div class="alert alert-warning" role="alert">
+                Do you want to read the documentation for Phonon v1?<br />
+                <a class="alert-link" target="_blank" href="https://phonon.quarkdev.com">
+                  Go to the v1 documentation
+                  <fa icon="chevron-right" />
+                </a>
+              </div>
+
+
               <!--
               <p>
                 Coming from v1.x?
@@ -439,16 +448,29 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
           </div>
           <div class="modal-body">
             <p>
-              The installation can take place in several ways:
+              You have the following options to install Phonon v2:
             </p>
             <p>
               <ul>
-                <li>Download the latest release and use dist files.</li>
-                <li>Clone the repo: <code>git clone https://github.com/quark-dev/Phonon-Framework.git</code></li>
-                <li>Install with npm: <code>npm install phonon</code>.</li>
-                <li>Install with yarn: <code>yarn add phonon</code>.</li>
-                <li>Install with Bower: <code>bower install phonon</code>.</li>
-                <li>Use CDNJS.</li>
+                <li>Install with npm: <pre><code>npm install phonon</code></pre></li>
+                <li>Install with yarn: <pre><code>yarn add phonon</code></pre></li>
+                <li>
+                  Deliver CDN cached version of Phonon compiled
+                  <a href="https://unpkg.com/phonon@2.0.0-alpha.1/dist/css/">CSS</a>
+                  and <a href="https://unpkg.com/phonon@2.0.0-alpha.1/dist/js/">JavaScript</a>
+                  to your project by using <a href="https://unpkg.com/phonon@2.0.0-alpha.1/">UNPKG</a>
+                </li>
+                <li>
+                  Clone the repository to get all source files and compile Phonon by using the scripts:
+                  <pre><code>git clone https://github.com/phonon-framework/phonon.git</code></pre>
+                </li>
+                <li>
+                  Download the
+                  <a href="https://github.com/phonon-framework/phonon/releases" target="_blank">
+                    latest release
+                  </a>
+                  and use compiled CSS and JavaScript files available in the dist folder
+                </li>
               </ul>
             </p>
           </div>
