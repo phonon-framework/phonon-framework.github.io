@@ -1,3 +1,11 @@
+<div class="alert alert-warning" role="alert">
+  Do you want to read the documentation for Phonon v1?<br />
+  <a class="alert-link" target="_blank" href="https://phonon.quarkdev.com/docs/">
+    Go to the v1 documentation
+    <fa icon="chevron-right" />
+  </a>
+</div>
+
 # Quick start
 
 Phonon builds are located in the `dist/` directory.
@@ -7,14 +15,13 @@ Please, read more about [custom builds](#0_getting-started/1_custom-build) if yo
 
 ## Installation
 
-The installation can take place in several ways:
+You have the following options to install Phonon v2:
 
-- [Download the latest release](https://github.com/quark-dev/Phonon-Framework/releases) and use dist files.
-- Clone the repo: `git clone https://github.com/quark-dev/Phonon-Framework.git`.
-- Install with [npm](https://www.npmjs.com): `npm install phonon`.
-- Install with [yarn](https://yarnpkg.com/en/): `yarn add phonon`.
-- Install with [Bower](https://bower.io): `bower install phonon`.
-- Use [CDNJS](https://cdnjs.com/libraries/PhononJs).
+- Install with [npm](https://www.npmjs.com/package/phonon) `npm install phonon@2.0.0-alpha.1`
+- Install with [Yarn](https://yarnpkg.com/en/package/phonon) `yarn add phonon@2.0.0-alpha.1`
+- Deliver CDN cached version of Phonon compiled [CSS](https://unpkg.com/phonon@2.0.0-alpha.1/dist/css/) and [JavaScript](https://unpkg.com/phonon@2.0.0-alpha.1/dist/js/) to your project by using [UNPKG](https://unpkg.com/phonon@2.0.0-alpha.1/)
+- Clone the repository to get all source files and compile Phonon by using the scripts: `git clone https://github.com/phonon-framework/phonon.git`
+- Download the [latest release](https://github.com/phonon-framework/phonon/releases) and use compiled CSS and JavaScript files available in the dist folder
 
 ## Starter Template
 
@@ -27,7 +34,7 @@ The installation can take place in several ways:
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Phonon CSS -->
-    <link rel="stylesheet" href="phonon/dist/css/phonon.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/phonon@2.0.0-alpha.1/dist/css/phonon.min.css" integrity="sha384-YvRRhxrEwrswiEGUXRvWsOw0trb5T3Mg0OupNZ48rCk6Ri3+q6DSWlYpEyr24vSK" crossorigin="anonymous">
 
     <title>Hello, world!</title>
   </head>
@@ -35,7 +42,7 @@ The installation can take place in several ways:
     <h1>Hello, world!</h1>
 
     <!-- Optional JavaScript -->
-    <script src="phonon/dist/js/phonon.min.js"></script>
+    <script src="https://unpkg.com/phonon@2.0.0-alpha.1/dist/js/phonon.min.js" integrity="sha384-m1wkisBdQfeP10FJfmEFUHZYSHzJEk3MroG9JfNrFjtxS8YirsDgkpwP5e1c631A" crossorigin="anonymous"></script>
   </body>
 </html>
 ```

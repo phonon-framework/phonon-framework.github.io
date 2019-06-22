@@ -22,7 +22,7 @@ Navbar is a responsive navigation containing links.
 <!-- Just an image -->
 <nav class="navbar navbar-light">
   <a class="navbar-title" href="#">
-    <img src="https://quark-dev.github.io/Phonon-Framework/icon.svg" width="30" height="30" alt="">
+    <img src="https://phonon-framework.github.io/icon.svg" width="30" height="30" alt="">
   </a>
 </nav>
 ```
@@ -31,7 +31,7 @@ Navbar is a responsive navigation containing links.
 <!-- Image and text -->
 <nav class="navbar navbar-light">
   <a class="navbar-title" href="#">
-    <img src="https://quark-dev.github.io/Phonon-Framework/icon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+    <img src="https://phonon-framework.github.io/icon.svg" width="30" height="30" class="d-inline-block align-top" alt="">
     Phonon
   </a>
 </nav>
@@ -43,7 +43,7 @@ Navbar is a responsive navigation containing links.
 <nav class="navbar navbar-light navbar-expand-lg">
   <div class="navbar-left">
     <a class="navbar-title" href="#">
-      <img class="d-inline-block" src="https://quark-dev.github.io/Phonon-Framework/icon.svg" width="30" height="30" alt="">
+      <img class="d-inline-block" src="https://phonon-framework.github.io/icon.svg" width="30" height="30" alt="">
       Phonon
     </a>
 
