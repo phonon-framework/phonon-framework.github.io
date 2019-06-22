@@ -60,8 +60,8 @@ Navbar is a responsive navigation containing links.
     </ul>
   </div>
   <div class="navbar-right">
-    <button class="navbar-toggle" type="button" data-toggle="offcanvas" data-target="#exampleOffCanvas">
-      <span class="navbar-toggle-icon" data-toggle="offcanvas" data-target="#exampleOffCanvas"></span>
+    <button class="navbar-toggle icon-hamburger" type="button" data-toggle="offcanvas" data-target="#exampleOffCanvas">
+      <span class="icon" data-toggle="offcanvas" data-target="#exampleOffCanvas"></span>
     </button>
   </div>
 </nav>
