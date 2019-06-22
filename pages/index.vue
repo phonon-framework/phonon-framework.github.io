@@ -99,7 +99,7 @@
 
               <div class="alert alert-warning" role="alert">
                 Do you want to read the documentation for Phonon v1?<br />
-                <a class="alert-link" target="_blank" href="https://phonon.quarkdev.com">
+                <a class="alert-link" target="_blank" href="https://phonon.quarkdev.com/docs/">
                   Go to the v1 documentation
                   <fa icon="chevron-right" />
                 </a>
