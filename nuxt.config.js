@@ -18,14 +18,6 @@ menu.forEach((entry) => {
  */
 const sitemapRoutes = [];
 
-// Home page
-sitemapRoutes.push({
-  url: 'https://phonon-framework.github.io',
-  changefreq: 'monthly',
-  priority: 1,
-  lastmodISO: new Date().toISOString(),
-});
-
 menu.forEach((entry) => {
   entry.items.forEach(({ key }) => {
     sitemapRoutes.push({
