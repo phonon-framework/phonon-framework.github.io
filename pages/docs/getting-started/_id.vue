@@ -14,10 +14,10 @@ import { capitalize } from '@/mixins';
 
 export default {
   layout: 'docs',
-  mixins: [ capitalize ],
   components: {
     MarkdownDoc,
   },
+  mixins: [ capitalize ],
   head () {
     return {
       title: `${meta.title} - Documentation - ${this.capitalize(this.$route.params.id)}`,
