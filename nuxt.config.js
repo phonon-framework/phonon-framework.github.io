@@ -46,6 +46,7 @@ module.exports = {
       { name: 'theme-color', content: '#ffffff' },
       { name: 'keywords', content: '' },
       { name: 'description', content: 'A light weight, scalable and customizable front-end Website/Webapps Framework with clear, simple and modern UI components.' },
+      { name: 'google-site-verification', content: 'yEPS0FAggzwJYDMwgAKNLDVfGnaYr-WYOYstP8v2eJU' },
     ],
     link: [
       // External resources
