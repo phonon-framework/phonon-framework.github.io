@@ -27,6 +27,7 @@
                   class="btn btn-primary border-white text-white"
                 >
                   Getting started
+                  <fa icon="chevron-right" />
                 </nuxt-link>
                 <button
                   class="btn btn-primary"
@@ -252,6 +253,7 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
                   href="https://github.com/quark-dev/Phonon-Framework/issues"
                 >
                   Open an issue
+                  <fa icon="chevron-right" />
                 </a>
               </p>
               <p class="text-justify mt-3">
