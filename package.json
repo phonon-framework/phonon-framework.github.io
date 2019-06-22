@@ -16,7 +16,10 @@
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@nuxtjs/google-analytics": "^2.2.0",
     "@nuxtjs/markdownit": "^1.2.3",
+    "@nuxtjs/robots": "^2.2.0",
+    "@nuxtjs/sitemap": "^1.2.0",
     "axios": "^0.18.0",
     "clipboard": "^2.0.4",
     "cross-env": "^5.2.0",
