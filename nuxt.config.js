@@ -113,6 +113,9 @@ module.exports = {
     // Google Analytics
     ['@nuxtjs/google-analytics', {
       id: 'UA-55826278-2',
+      set: [
+        { field: 'anonymizeIp', value: true },
+      ],
     }],
     // FontAwesome
     ['nuxt-fontawesome', {
