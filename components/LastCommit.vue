@@ -1,12 +1,10 @@
 <template>
-  <div class="commit mt-2 text-white font-size-sm">
-    <a
-      :href="lastCommit.url"
-      target="_blank"
-      class="text-white"
-      v-text="`${lastCommit.sha.substring(0, 7)}, ${lastCommit.date}`"
-    />
-  </div>
+  <a
+    :href="lastCommit.url"
+    target="_blank"
+    class="text-white"
+    v-text="`${lastCommit.sha.substring(0, 7)}, ${lastCommit.date}`"
+  />
 </template>
 
 <script>
