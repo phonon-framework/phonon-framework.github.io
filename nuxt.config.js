@@ -67,9 +67,6 @@ module.exports = {
         rel: 'sitemap', href: '/sitemap.xml', type: 'application/xml', title: 'Sitemap',
       },
     ],
-    script: [
-      { src: '/js/phonon.js' },
-    ],
   },
 
   /*
@@ -81,7 +78,6 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    '~/static/css/phonon.min.css',
     '@/assets/scss/app.scss',
   ],
 
