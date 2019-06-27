@@ -33,30 +33,30 @@ export default {
       return loadMarkdown(this.$store.state.version.current, this.section, this.resource);
     },
   },
-  mounted() {
-    this.$nextTick(() => {
-      Array.from(this.$el.querySelectorAll('table') || []).forEach((table) => {
-        if (!table.classList.contains('table')) {
-          table.classList.add('table');
-        }
-        if (!table.classList.contains('table-responsive')) {
-          table.classList.add('table-responsive');
-        }
-      });
+  async mounted() {
+    await this.$nextTick();
 
-      Array.from(this.$el.querySelectorAll('pre code') || []).forEach((code) => {
-        const btnId = Math.random().toString(36).substring(0, 20).replace(/[0-9.]/g, '');
-        const page = code.parentNode.parentNode;
-
-        page.insertBefore(this.addButton(btnId), code.parentNode.previousSibling);
-        this.setListener(`#${btnId}`, code);
-
-        // highlight
-        hljs.highlightBlock(code);
-      });
-
-      this.setCustomButtons();
+    Array.from(this.$el.querySelectorAll('table') || []).forEach((table) => {
+      if (!table.classList.contains('table')) {
+        table.classList.add('table');
+      }
+      if (!table.classList.contains('table-responsive')) {
+        table.classList.add('table-responsive');
+      }
     });
+
+    Array.from(this.$el.querySelectorAll('pre code') || []).forEach((code) => {
+      const btnId = Math.random().toString(36).substring(0, 20).replace(/[0-9.]/g, '');
+      const page = code.parentNode.parentNode;
+
+      page.insertBefore(this.addButton(btnId), code.parentNode.previousSibling);
+      this.setListener(`#${btnId}`, code);
+
+      // highlight
+      hljs.highlightBlock(code);
+    });
+
+    this.setCustomButtons();
   },
   methods: {
     addButton(id) {
