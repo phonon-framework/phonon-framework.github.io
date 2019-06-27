@@ -35,6 +35,14 @@
           >
             <a class="nav-link">Documentation</a>
           </nuxt-link>
+          <nuxt-link
+            v-if="useCases.length > 0"
+            :to="{ name: 'use-cases' }"
+            tag="li"
+            class="nav-item"
+          >
+            <a class="nav-link">Use cases</a>
+          </nuxt-link>
           <li class="nav-item">
             <a
               class="nav-link"
@@ -96,7 +104,14 @@
 </template>
 
 <script>
+import useCases from '~/use-cases';
+
 export default {
+  data() {
+    return {
+      useCases,
+    };
+  },
   methods: {
     changeVersion(event) {
       this.$store.commit('version/change', event.target.value);
