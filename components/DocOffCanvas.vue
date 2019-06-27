@@ -29,6 +29,7 @@
                 <nuxt-link
                   :to="{ name: 'index' }"
                   exact
+                  @click.native="autoClose"
                 >
                   Home
                 </nuxt-link>
@@ -49,6 +50,7 @@
               <nuxt-link
                 :to="{ name: section.route, params: { id: 'index' }}"
                 v-text="section.label"
+                @click.native="autoClose"
               />
               <ul class="menu">
                 <li
