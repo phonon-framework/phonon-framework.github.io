@@ -17,8 +17,8 @@ export default {
   components: {
     MarkdownDoc,
   },
-  mixins: [ capitalize ],
-  head () {
+  mixins: [capitalize],
+  head() {
     return {
       title: `${meta.title} - Documentation - ${this.capitalize(this.$route.params.id)}`,
     };

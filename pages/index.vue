@@ -506,14 +506,14 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
 </template>
 
 <script>
-import Navbar from '~/components/Navbar';
-import HomeOffCanvas from '~/components/HomeOffCanvas';
 import axios from 'axios';
 
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
 import scss from 'highlight.js/lib/languages/scss';
 import xml from 'highlight.js/lib/languages/xml';
+import HomeOffCanvas from '~/components/HomeOffCanvas';
+import Navbar from '~/components/Navbar';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('xml', xml);
@@ -528,14 +528,14 @@ export default {
       github: { user: 'quark-dev', repo: 'Phonon-Framework', branch: 'master' },
       // lastCommit: null,
       lastCommit: { sha: '', date: '' },
-      pluginsJsExample: 'new Modal({\n' +
-        '  element: \'#myModal\', // optional\n' +
-        '  center: true,\n' +
-        '  dismiss: true,\n' +
-        '}).show();',
-      plugionHtmlExample: '<div id="myModal" data-config="center: true, dismiss: true">\n' +
-        '...\n' +
-        '</div>',
+      pluginsJsExample: 'new Modal({\n'
+        + '  element: \'#myModal\', // optional\n'
+        + '  center: true,\n'
+        + '  dismiss: true,\n'
+        + '}).show();',
+      plugionHtmlExample: '<div id="myModal" data-config="center: true, dismiss: true">\n'
+        + '...\n'
+        + '</div>',
     };
   },
   async mounted() {
@@ -556,12 +556,12 @@ export default {
       const commitTime = new Date(commitDate).getTime();
       const todayTime = new Date().getTime();
 
-      const differenceInDays = Math.floor(((todayTime - commitTime)/(24*3600*1000)));
+      const differenceInDays = Math.floor(((todayTime - commitTime) / (24 * 3600 * 1000)));
 
       if (differenceInDays === 0) {
-        const differenceInHours = Math.floor(((todayTime - commitTime)/(3600*1000)));
+        const differenceInHours = Math.floor(((todayTime - commitTime) / (3600 * 1000)));
         if (differenceInHours === 0) {
-          const differenceInMinutes = Math.floor(((todayTime - commitTime)/(600*1000)));
+          const differenceInMinutes = Math.floor(((todayTime - commitTime) / (600 * 1000)));
           if (differenceInMinutes === 0) {
             return 'just now';
           }

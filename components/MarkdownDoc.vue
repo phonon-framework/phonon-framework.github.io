@@ -4,13 +4,13 @@
 </template>
 
 <script>
-import { loadMarkdown } from '@/utils';
 import ClipBoard from 'clipboard';
 
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
 import scss from 'highlight.js/lib/languages/scss';
 import xml from 'highlight.js/lib/languages/xml';
+import { loadMarkdown } from '@/utils';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('scss', scss);
@@ -45,7 +45,7 @@ export default {
         const page = code.parentNode.parentNode;
 
         page.insertBefore(this.addButton(btnId), code.parentNode.previousSibling);
-        this.setListener('#' + btnId, code);
+        this.setListener(`#${btnId}`, code);
 
         // highlight
         hljs.highlightBlock(code);
@@ -76,16 +76,16 @@ export default {
     },
     setListener(btnId, code) {
       const clipboard = new ClipBoard(btnId, {
-        target: function() {
+        target() {
           return code;
-        }
+        },
       });
 
-      clipboard.on('success', function (event) {
+      clipboard.on('success', (event) => {
         event.clearSelection();
       });
 
-      document.querySelector(btnId).addEventListener('click', function (event) {
+      document.querySelector(btnId).addEventListener('click', (event) => {
         const text = event.target.innerHTML;
         event.target.innerHTML = 'Copied';
         setTimeout(() => {

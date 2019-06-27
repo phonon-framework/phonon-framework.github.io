@@ -8,7 +8,7 @@ export const state = () => ({
 });
 
 export const mutations = {
-  change (state, version) {
+  change(state, version) {
     state.current = version;
   },
 };

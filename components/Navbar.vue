@@ -99,7 +99,7 @@
 export default {
   methods: {
     changeVersion(event) {
-      this.$store.commit('version/change', event.target.value)
+      this.$store.commit('version/change', event.target.value);
     },
   },
 };

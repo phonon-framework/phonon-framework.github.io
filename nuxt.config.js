@@ -54,12 +54,18 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://rsms.me/inter/inter.css' },
       // Favicons
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicons/apple-touch-icon.png' },
-      { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png' },
-      { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png' },
+      {
+        rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicons/favicon-32x32.png',
+      },
+      {
+        rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicons/favicon-16x16.png',
+      },
       { rel: 'manifest', href: '/favicons/site.webmanifest' },
       { rel: 'mask-icon', href: '/favicons/safari-pinned-tab.svg', color: '#3271d1' },
       // Sitemap
-      { rel: 'sitemap', href: '/sitemap.xml', type: 'application/xml', title: 'Sitemap' },
+      {
+        rel: 'sitemap', href: '/sitemap.xml', type: 'application/xml', title: 'Sitemap',
+      },
     ],
     script: [
       { src: '/js/phonon.js' },
@@ -85,7 +91,7 @@ module.exports = {
   plugins: [],
 
   router: {
-    linkActiveClass: 'active'
+    linkActiveClass: 'active',
   },
 
   generate: {
@@ -114,7 +120,7 @@ module.exports = {
     ['nuxt-fontawesome', {
       component: 'fa',
       imports: [
-        //import icons from set
+        // import icons from set
         {
           set: '@fortawesome/free-solid-svg-icons',
           icons: [
@@ -123,7 +129,7 @@ module.exports = {
             'faMobileAlt', 'faTabletAlt', 'faCodeBranch', 'faDonate',
           ],
         },
-      ]
+      ],
     }],
     // Markdown
     '@nuxtjs/markdownit',
@@ -152,13 +158,13 @@ module.exports = {
       const classAttribute = lang ? ` class="${lang}"` : '';
 
       function escapeHtml(str) {
-        var HTML_ESCAPE_TEST_RE = /[&<>"]/;
-        var HTML_ESCAPE_REPLACE_RE = /[&<>"]/g;
-        var HTML_REPLACEMENTS = {
+        const HTML_ESCAPE_TEST_RE = /[&<>"]/;
+        const HTML_ESCAPE_REPLACE_RE = /[&<>"]/g;
+        const HTML_REPLACEMENTS = {
           '&': '&amp;',
           '<': '&lt;',
           '>': '&gt;',
-          '"': '&quot;'
+          '"': '&quot;',
         };
 
         function replaceUnsafeChar(ch) {
@@ -195,7 +201,7 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
+          exclude: /(node_modules)/,
         });
       }
     },

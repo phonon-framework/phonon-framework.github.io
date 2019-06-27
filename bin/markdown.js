@@ -11,7 +11,7 @@ function read(dir, dirOnly = true, filesOnly = false) {
     .filter((f) => {
       if (dirOnly) {
         return fs.statSync(`${path.join(dir, f)}`).isDirectory();
-      } else if (filesOnly) {
+      } if (filesOnly) {
         return fs.statSync(`${path.join(dir, f)}`).isFile();
       }
 
@@ -42,7 +42,7 @@ read(mainPath, true)
           version,
           section,
           file,
-        })
+        });
       });
     });
   });
@@ -50,7 +50,7 @@ read(mainPath, true)
 const imports = tree.reduce((acc, resource) => {
   const name = getResourcePath(resource, '', true);
   const realPath = getResourcePath(resource, '/');
-  return acc + `import ${name} from '@/${markdownDir}/${realPath}.md';\n`;
+  return `${acc}import ${name} from '@/${markdownDir}/${realPath}.md';\n`;
 }, '');
 
 const exported = tree.reduce((acc, resource, i) => {

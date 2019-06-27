@@ -15,21 +15,21 @@ export default {
     progress: 0,
   }),
   methods: {
-    start () {
+    start() {
       this.show = true;
       this.error = false;
       this.progress = 0;
     },
-    finish () {
+    finish() {
       this.hide();
     },
-    fail () {
+    fail() {
       this.error = true;
     },
-    increase (num) {
-      this.progress = num
+    increase(num) {
+      this.progress = num;
     },
-    hide () {
+    hide() {
       this.progress = 100;
       setTimeout(() => {
         this.show = false;
