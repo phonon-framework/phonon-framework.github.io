@@ -1,7 +1,7 @@
 <template>
   <div class="h-100 bg-white">
     <home-off-canvas ref="offCanvas" />
-    <navbar @menu="$refs.offCanvas.show()" />
+    <main-navbar @menu="$refs.offCanvas.show()" />
     <header class="header-main">
       <div class="main-container bg-primary d-flex">
         <div class="container d-flex">
@@ -37,17 +37,8 @@
                 >
                   Download
                 </button>
-                <div
-                  v-if="lastCommit"
-                  class="commit mt-2 text-white font-size-sm"
-                >
-                  <a
-                    :href="lastCommit.url"
-                    target="_blank"
-                    class="text-white"
-                    v-text="`${lastCommit.sha.substring(0, 7)}, ${lastCommit.date}`"
-                  />
-                </div>
+
+                <last-commit />
               </div>
             </div>
             <div class="col-sm-6">
@@ -522,27 +513,25 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
 </template>
 
 <script>
-import axios from 'axios';
 import phonon from 'phonon/dist/js/phonon';
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
 import xml from 'highlight.js/lib/languages/xml';
 import HomeOffCanvas from '~/components/HomeOffCanvas';
-import Navbar from '~/components/Navbar';
+import MainNavbar from '~/components/MainNavbar';
+import LastCommit from '~/components/LastCommit';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('xml', xml);
 
 export default {
   components: {
-    Navbar,
+    MainNavbar,
     HomeOffCanvas,
+    LastCommit,
   },
   data() {
     return {
-      github: { user: 'phonon-framework', repo: 'phonon', branch: 'master' },
-      // lastCommit: null,
-      lastCommit: { sha: '', date: '' },
       pluginsJsExample: 'new Modal({\n'
         + '  element: \'#myModal\', // optional\n'
         + '  center: true,\n'
@@ -556,8 +545,6 @@ export default {
   async mounted() {
     await this.$nextTick();
 
-    this.lastCommit = await this.getLastCommit();
-
     Array.from(this.$el.querySelectorAll('pre code') || []).forEach((code) => {
       hljs.highlightBlock(code);
     });
@@ -567,60 +554,6 @@ export default {
     next();
   },
   methods: {
-    when(commitDate) {
-      const commitTime = new Date(commitDate).getTime();
-      const todayTime = new Date().getTime();
-
-      const differenceInDays = Math.floor(((todayTime - commitTime) / (24 * 3600 * 1000)));
-
-      if (differenceInDays === 0) {
-        const differenceInHours = Math.floor(((todayTime - commitTime) / (3600 * 1000)));
-        if (differenceInHours === 0) {
-          const differenceInMinutes = Math.floor(((todayTime - commitTime) / (600 * 1000)));
-          if (differenceInMinutes === 0) {
-            return 'just now';
-          }
-
-          if (differenceInMinutes === 1) {
-            return `${differenceInMinutes} minute ago`;
-          }
-
-          return `${differenceInMinutes} minutes ago`;
-        }
-
-        if (differenceInHours === 1) {
-          return `${differenceInHours} hour ago`;
-        }
-
-        return `${differenceInHours} hours ago`;
-      }
-
-      if (differenceInDays === 1) {
-        return 'yesterday';
-      }
-
-      return `${differenceInDays} days ago`;
-    },
-    async getLastCommit() {
-      try {
-        const response = await axios({
-          url: `https://api.github.com/repos/${this.github.user}/${this.github.repo}/commits?sha=${this.github.branch}`,
-          method: 'get',
-        });
-
-        const cur = response.data[0];
-
-        return {
-          sha: cur.sha,
-          date: this.when(cur.commit.committer.date),
-          url: `https://github.com/${this.github.user}/${this.github.repo}/commit/${cur.sha}`,
-        };
-      } catch (e) {
-        // Err
-      }
-
-      return null;
-    },
     openDownloadModal() {
       // @todo: import phonon as cjs
       phonon.modal({ element: '#downloadModal' }).show();
