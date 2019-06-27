@@ -4,8 +4,8 @@ A modal is a flexible window that is visible on top of the main window.
 
 <hr />
 
-<div style="position:relative;padding:45px;background-color: #bbb;">
-  <div class="modal show" tabindex="-1" role="modal" style="position:static;width: 350px;">
+<div class="mb-4" style="position:relative;padding:45px;background-color: #bbb;">
+  <div class="modal show" tabindex="-1" role="modal" style="position:static;width: 350px;max-width:100%;">
     <div class="modal-inner" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -26,7 +26,7 @@ A modal is a flexible window that is visible on top of the main window.
     </div>
   </div>
 
-  <div class="modal show modal-primary mt-4" tabindex="-1" role="modal" style="position:static;width: 350px;">
+  <div class="modal show modal-primary mt-4" tabindex="-1" role="modal" style="position:static;width: 350px;max-width:100%;">
     <div class="modal-inner" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -47,7 +47,7 @@ A modal is a flexible window that is visible on top of the main window.
     </div>
   </div>
 
-  <div class="modal show modal-danger mt-4" tabindex="-1" role="modal" style="position:static;width: 350px;">
+  <div class="modal show modal-danger mt-4" tabindex="-1" role="modal" style="position:static;width: 350px;max-width:100%;">
     <div class="modal-inner" role="document">
       <div class="modal-content">
         <div class="modal-header">
