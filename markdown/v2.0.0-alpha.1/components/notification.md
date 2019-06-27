@@ -5,7 +5,7 @@ A notification is a floating message on top of the main window.
 <hr />
 
 <div class="mx-auto" style="padding:45px;background:#eee;">
-  <div class="notification notification-primary show mx-auto" style="top:0;bottom:auto;position:relative;margin:0">
+  <div class="notification notification-primary mx-auto" style="visibility:visible;opacity:1;top:0;bottom:auto;position:relative;margin:0">
     <div class="notification-inner">
       <div class="notification-header">
         <h5 class="notification-title">Heads up!</h5>
