@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import phonon from 'phonon/dist/js/phonon';
+
 export default {
   data() {
     return {

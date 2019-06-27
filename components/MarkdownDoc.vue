@@ -4,13 +4,14 @@
 </template>
 
 <script>
+import phonon from 'phonon';
 import ClipBoard from 'clipboard';
 
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
 import scss from 'highlight.js/lib/languages/scss';
 import xml from 'highlight.js/lib/languages/xml';
-import { loadMarkdown } from '@/utils';
+import loadMarkdown from '@/utils';
 
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('scss', scss);
@@ -37,6 +38,9 @@ export default {
       Array.from(this.$el.querySelectorAll('table') || []).forEach((table) => {
         if (!table.classList.contains('table')) {
           table.classList.add('table');
+        }
+        if (!table.classList.contains('table-responsive')) {
+          table.classList.add('table-responsive');
         }
       });
 
@@ -86,6 +90,7 @@ export default {
       });
 
       document.querySelector(btnId).addEventListener('click', (event) => {
+        /* eslint no-param-reassign: 0 */
         const text = event.target.innerHTML;
         event.target.innerHTML = 'Copied';
         setTimeout(() => {

@@ -70,6 +70,7 @@
 </template>
 
 <script>
+import phonon from 'phonon/dist/js/phonon';
 import menu from '~/utils/menu';
 
 export default {
