@@ -1,6 +1,6 @@
 <template>
   <div class="h-100">
-    <navbar @menu="$refs.offCanvas.toggle()" />
+    <main-navbar @menu="$refs.offCanvas.toggle()" />
     <main>
       <doc-off-canvas ref="offCanvas" />
       <example-off-canvas />
@@ -18,13 +18,13 @@
 </template>
 
 <script>
-import Navbar from '~/components/Navbar';
+import MainNavbar from '~/components/MainNavbar';
 import DocOffCanvas from '~/components/DocOffCanvas';
 import ExampleOffCanvas from '~/components/ExampleOffCanvas';
 
 export default {
   components: {
-    Navbar,
+    MainNavbar,
     DocOffCanvas,
     ExampleOffCanvas,
   },
