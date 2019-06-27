@@ -1,3 +1,4 @@
+/* eslint import/prefer-default-export: 0 */
 export const capitalize = {
   methods: {
     capitalize(str) {
