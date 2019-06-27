@@ -1,47 +1,8 @@
-// Import Phonon
-@import '../../node_modules/phonon/src/scss/functions';
-
-@import '../../node_modules/phonon/src/scss/variables';
-
-// Import variables
+// Include variables including those that overwrite Phonon's variables
 @import './variables';
 
-@import '../../node_modules/phonon/src/scss/mixins';
-@import '../../node_modules/phonon/src/scss/root';
-@import '../../node_modules/phonon/src/scss/reboot';
-@import '../../node_modules/phonon/src/scss/images';
-
-// Components
-@import '../../node_modules/phonon/src/scss/components/base';
-@import '../../node_modules/phonon/src/scss/components/highlight';
-@import '../../node_modules/phonon/src/scss/components/heading';
-@import '../../node_modules/phonon/src/scss/components/line';
-@import '../../node_modules/phonon/src/scss/components/collection';
-@import '../../node_modules/phonon/src/scss/components/table';
-@import '../../node_modules/phonon/src/scss/components/icon';
-@import '../../node_modules/phonon/src/scss/components/navbar';
-@import '../../node_modules/phonon/src/scss/components/alert';
-@import '../../node_modules/phonon/src/scss/components/button';
-@import '../../node_modules/phonon/src/scss/components/button-group';
-@import '../../node_modules/phonon/src/scss/components/breadcrumb';
-@import '../../node_modules/phonon/src/scss/components/form';
-@import '../../node_modules/phonon/src/scss/components/input-group';
-@import '../../node_modules/phonon/src/scss/components/progress';
-@import '../../node_modules/phonon/src/scss/components/tab';
-@import '../../node_modules/phonon/src/scss/components/footer';
-@import '../../node_modules/phonon/src/scss/components/loader';
-@import '../../node_modules/phonon/src/scss/components/grid';
-@import '../../node_modules/phonon/src/scss/components/collapse';
-@import '../../node_modules/phonon/src/scss/components/accordion';
-@import '../../node_modules/phonon/src/scss/components/modal';
-@import '../../node_modules/phonon/src/scss/components/tile';
-@import '../../node_modules/phonon/src/scss/components/notification';
-@import '../../node_modules/phonon/src/scss/components/off-canvas';
-@import '../../node_modules/phonon/src/scss/components/selectbox';
-
-// Utilities
-@import '../../node_modules/phonon/src/scss/utilities';
-
+// Import Phonon sources
+@import '../../node_modules/phonon/src/scss/phonon';
 
 // Custom style
 html,
@@ -58,8 +19,7 @@ body {
 html,
 body,
 #__nuxt
-#__layout,
- {
+#__layout {
   height: 100%;
   min-height: 100% !important;
 }
