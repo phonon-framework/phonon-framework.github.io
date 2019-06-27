@@ -49,8 +49,8 @@
             >
               <nuxt-link
                 :to="{ name: section.route, params: { id: 'index' }}"
-                v-text="section.label"
                 @click.native="autoClose"
+                v-text="section.label"
               />
               <ul class="menu">
                 <li
@@ -59,8 +59,8 @@
                 >
                   <nuxt-link
                     :to="{ name: section.route, params: { id: item.key }}"
-                    v-text="item.label"
                     @click.native="autoClose"
+                    v-text="item.label"
                   />
                 </li>
               </ul>
