@@ -5,10 +5,10 @@
       <doc-off-canvas ref="offCanvas" />
       <example-off-canvas />
 
-      <section class="content bg-light">
+      <section class="content">
         <div
           id="docPage"
-          class="page bg-white p-2 p-md-5"
+          class="page bg-white p-2 p-lg-5"
         >
           <nuxt />
         </div>
