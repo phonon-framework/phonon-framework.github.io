@@ -38,7 +38,9 @@
                   Download
                 </button>
 
-                <last-commit />
+                <div class="commit mt-2 text-white font-size-sm">
+                  <last-commit />
+                </div>
               </div>
             </div>
             <div class="col-sm-6">
