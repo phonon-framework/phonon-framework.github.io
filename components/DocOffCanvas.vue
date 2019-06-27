@@ -58,6 +58,7 @@
                   <nuxt-link
                     :to="{ name: section.route, params: { id: item.key }}"
                     v-text="item.label"
+                    data-dismiss="offcanvas"
                   />
                 </li>
               </ul>
