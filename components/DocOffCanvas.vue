@@ -58,7 +58,7 @@
                   <nuxt-link
                     :to="{ name: section.route, params: { id: item.key }}"
                     v-text="item.label"
-                    data-dismiss="offcanvas"
+                    @click.native="autoClose"
                   />
                 </li>
               </ul>
@@ -96,6 +96,15 @@ export default {
     },
     toggle() {
       this.offCanvas.toggle();
+    },
+    autoClose() {
+      if (!document.body.querySelector('.offcanvas-backdrop')) {
+        // Keep the off-canvas open for desktop screens
+        return;
+      }
+
+      // Auto-hide on mobile and tablet screens
+      this.hide();
     },
   },
 };
