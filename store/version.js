@@ -8,7 +8,8 @@ export const state = () => ({
 });
 
 export const mutations = {
-  change(state, version) {
-    state.current = version;
+  change(store, version) {
+    /* eslint no-param-reassign: 0 */
+    store.current = version;
   },
 };

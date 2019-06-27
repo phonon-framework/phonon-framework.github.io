@@ -1,5 +1,7 @@
 import markdown from './markdown';
 
-export function loadMarkdown(version, section, file) {
+function loadMarkdown(version, section, file) {
   return markdown[`${version}/${section}/${file}`];
 }
+
+export default loadMarkdown;
