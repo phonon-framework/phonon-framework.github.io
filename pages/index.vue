@@ -12,10 +12,12 @@
                 class="emphasis w-md h-md border-white my-4"
               >
               <h1 class="h2 text-white font-weight-light mb-4">
-                <b>Phonon</b> is a <b>responsive</b> <b>front-end</b> framework with a focus on simplicity and flexibility
+                <b>Phonon</b> is a <b>responsive</b> <b>front-end</b>
+                framework with a focus on simplicity and flexibility
               </h1>
               <p class="h5 text-justify font-weight-light text-white">
-                Phonon is a front-end framework made with <strong>mobile and desktop</strong> in mind.
+                Phonon is a front-end framework made with <strong>mobile and desktop</strong>
+                in mind.
                 It offers clear and neutral components that integrate best practices
                 and ideas coming from well-known design styles.
               </p>
@@ -39,7 +41,12 @@
                   v-if="lastCommit"
                   class="commit mt-2 text-white font-size-sm"
                 >
-                  <div v-text="`${lastCommit.sha.substring(0, 7)}, ${lastCommit.date}`" />
+                  <a
+                    :href="lastCommit.url"
+                    target="_blank"
+                    class="text-white"
+                    v-text="`${lastCommit.sha.substring(0, 7)}, ${lastCommit.date}`"
+                  />
                 </div>
               </div>
             </div>
@@ -141,7 +148,8 @@
               <p class="text-justify">
                 <b>JavaScript approach:</b> Use the JavaScript API directly to use components.
                 Some components such as modals and notifications don't require any HTML markup.
-                By omitting the <i><code>element</code></i> option, it will generate the HTML markup and add it into the DOM.
+                By omitting the <i><code>element</code></i> option, it will generate the HTML markup
+                and add it into the DOM.
               </p>
             </div>
             <div class="col-md-6">
@@ -155,8 +163,10 @@
           <div class="row align-items-center">
             <div class="col-md-6">
               <p class="text-justify">
-                <b>HTML approach:</b> Most component options are read directly from the HTML markup thanks to data-attributes.
-                This eliminates the need to write unnecessary JavaScript configuration elsewhere in your code.
+                <b>HTML approach:</b> Most component options are read directly
+                from the HTML markup thanks to data-attributes.
+                This eliminates the need to write unnecessary JavaScript
+                configuration elsewhere in your code.
               </p>
             </div>
             <div class="col-md-6">
@@ -179,7 +189,8 @@
               </h3>
 
               <p class="text-justify">
-                The UI components are designed to support use cases on different device formats
+                The UI components are designed to support use cases
+                on different device formats
                 such as desktop, tablets and smartphones.
               </p>
             </div>
@@ -203,7 +214,8 @@
               </h3>
 
               <p class="text-justify">
-                Include individual components that are useful in your project in order to optimize the size.
+                Include individual components that are useful
+                in your project in order to optimize the size.
                 For more information, please read
                 <nuxt-link :to="{name: 'docs-getting-started-id', params: { id: 'custom-builds' }}">
                   Custom builds
@@ -240,7 +252,8 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
 
               <p class="text-justify">
                 The MIT License is a permissive free software license.
-                As a 100% free open-source project, developer participation is encouraged, as much or little as possible.
+                As a 100% free open-source project,
+                developer participation is encouraged, as much or little as possible.
                 Fork it, open issues and star the project!<br>
                 Feel free to use Phonon for your free and commercial projects.
               </p>
@@ -328,7 +341,8 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
               </h3>
 
               <p class="text-justify">
-                Phonon does not use and does not depend on any JavaScript third party libraries.
+                Phonon does not use and does not depend on any
+                JavaScript third party libraries.
                 Choose the right framework according to your needs and your project's size
                 such as
                 <a
@@ -350,7 +364,8 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
                 or work with pure JavaScript.
               </p>
               <p class="text-justify">
-                We're building this website with <a href="https://nuxtjs.org">Nuxt.js</a> which is a good use case on
+                We're building this website with
+                <a href="https://nuxtjs.org">Nuxt.js</a> which is a good use case on
                 how to work with Phonon and <a href="https://vuejs.org">Vue.js</a>.
               </p>
             </div>
@@ -374,8 +389,8 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
               </h3>
 
               <p class="text-justify">
-                Use Phonon as a prototyping website and apps toolkit to show your drafts and mockups
-                or build amazing websites.
+                Use Phonon as a prototyping website and apps toolkit
+                to show your drafts and mockups or build amazing websites.
               </p>
             </div>
             <div class="col-md-6">
@@ -468,7 +483,8 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
                   to your project by using <a href="https://unpkg.com/phonon@2.0.0-alpha.1/">UNPKG</a>
                 </li>
                 <li>
-                  Clone the repository to get all source files and compile Phonon by using the scripts:
+                  Clone the repository to get all source files
+                  and compile Phonon by using the scripts:
                   <pre><code>git clone https://github.com/phonon-framework/phonon.git</code></pre>
                 </li>
                 <li>
@@ -507,10 +523,9 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
 
 <script>
 import axios from 'axios';
-
+import phonon from 'phonon/dist/js/phonon';
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
-import scss from 'highlight.js/lib/languages/scss';
 import xml from 'highlight.js/lib/languages/xml';
 import HomeOffCanvas from '~/components/HomeOffCanvas';
 import Navbar from '~/components/Navbar';
@@ -525,7 +540,7 @@ export default {
   },
   data() {
     return {
-      github: { user: 'quark-dev', repo: 'Phonon-Framework', branch: 'master' },
+      github: { user: 'phonon-framework', repo: 'phonon', branch: 'master' },
       // lastCommit: null,
       lastCommit: { sha: '', date: '' },
       pluginsJsExample: 'new Modal({\n'
@@ -595,8 +610,13 @@ export default {
 
         const cur = response.data[0];
 
-        return { sha: cur.sha, date: this.when(cur.commit.committer.date) };
+        return {
+          sha: cur.sha,
+          date: this.when(cur.commit.committer.date),
+          url: `https://github.com/${this.github.user}/${this.github.repo}/commit/${cur.sha}`,
+        };
       } catch (e) {
+        // Err
       }
 
       return null;
