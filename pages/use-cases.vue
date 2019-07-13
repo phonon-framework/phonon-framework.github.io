@@ -12,7 +12,7 @@
             class="alert alert-primary"
             role="alert"
           >
-            Feel free to add your project on this page!<br />
+            Feel free to add your project on this page!<br>
             <a
               class="alert-link"
               target="_blank"
