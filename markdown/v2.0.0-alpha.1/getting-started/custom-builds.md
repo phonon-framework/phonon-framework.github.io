@@ -51,7 +51,7 @@ Please, see the source code of [phonon.scss](https://github.com/quark-dev/Phonon
 
 ```js
 // Import Phonon package
-import 'phonon/dist/js/phonon'
+import 'phonon/dist/js/phonon';
 
 // ... Or import required components for your project
 import Accordion from './components/accordion';
