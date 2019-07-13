@@ -111,19 +111,6 @@
                   <fa icon="chevron-right" />
                 </a>
               </div>
-
-
-              <!--
-              <p>
-                Coming from v1.x?
-                <nuxt-link
-                  :to="{ name: 'docs-getting-started-id', params: { id: 'migration' }}"
-                  class="btn btn-outline-primary d-inline-block"
-                >
-                  Read the migration guide
-                </nuxt-link>
-              </p>
-              -->
             </div>
           </div>
         </div>
@@ -131,12 +118,15 @@
 
       <div class="story bg-light">
         <div class="container">
-          <h2>Fast and easy to use</h2>
-          <h3 class="headline text-primary">
-            JavaScript or HTML setup
-          </h3>
-
-          <div class="row align-items-center">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Fast and easy to use</h2>
+              <h3 class="headline text-primary">
+                Component setup in JavaScript or HTML
+              </h3>
+            </div>
+          </div>
+          <div class="row">
             <div class="col-md-6">
               <p class="text-justify">
                 <b>JavaScript approach:</b> Use the JavaScript API directly to use components.
@@ -147,7 +137,7 @@
             </div>
             <div class="col-md-6">
               <pre><code
-                class="font-size-sm"
+                class="font-size-sm pt-0"
               v-text="pluginsJsExample"
               /></pre>
             </div>
@@ -164,7 +154,7 @@
             </div>
             <div class="col-md-6">
               <pre><code
-                class="font-size-sm"
+                class="font-size-sm pt-0"
               v-text="plugionHtmlExample"
               /></pre>
             </div>
@@ -173,6 +163,57 @@
       </div>
 
       <div class="story">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <h2>Import Phonon, that's it</h2>
+              <h3 class="headline text-primary">
+                Virtual DOM compatible by default
+              </h3>
+              <p class="text-justify">
+                Phonon uses a DOM MutationObserver which enables to react to DOM changes.
+                This explains the ease of use of Phonon with Angular, React, Vue, etc.
+              </p>
+              <p class="text-justify">
+                We're building this website with
+                <a href="https://nuxtjs.org">Nuxt.js</a> which is a good use case on
+                how to work with Phonon and <a href="https://vuejs.org">Vue.js</a>.
+              </p>
+              <p>
+                You can have a look here:
+                <a href="https://github.com/phonon-framework/phonon-framework.github.io">
+                  phonon-framework/phonon-framework.github.io
+                  <fa icon="chevron-right" />
+                </a>
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div class="text-center">
+                <fa
+                  :icon="['fab', 'react']"
+                  class="fas d-inline-block"
+                />
+                <fa
+                  :icon="['fab', 'vuejs']"
+                  class="fas d-inline-block"
+                />
+                <fa
+                  :icon="['fab', 'angular']"
+                  class="fas d-inline-block"
+                />
+              </div>
+              <pre>
+                <code class="font-size-sm">
+// For React, VueJS, Angular, ...
+require(&#x27;phonon/dist/js/phonon&#x27;);
+                </code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story bg-light">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6">
@@ -197,7 +238,7 @@
         </div>
       </div>
 
-      <div class="story bg-light">
+      <div class="story">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6">
@@ -218,7 +259,7 @@
               <pre>
                 <code class="font-size-sm">
 // All
-const phonon = require(&#x27;phonon/dist/phonon&#x27;);
+const phonon = require(&#x27;phonon/dist/js/phonon&#x27;);
 // Component
 const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
                 </code>
@@ -234,7 +275,7 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
         </div>
       </div>
 
-      <div class="story">
+      <div class="story bg-light">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6">
@@ -324,7 +365,7 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
         </div>
       </div>
 
-      <div class="story bg-light">
+      <div class="story">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6">
@@ -356,11 +397,6 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
                 >Riot.js</a>
                 or work with pure JavaScript.
               </p>
-              <p class="text-justify">
-                We're building this website with
-                <a href="https://nuxtjs.org">Nuxt.js</a> which is a good use case on
-                how to work with Phonon and <a href="https://vuejs.org">Vue.js</a>.
-              </p>
             </div>
             <div class="col-md-6">
               <fa
@@ -372,7 +408,7 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
         </div>
       </div>
 
-      <div class="story">
+      <div class="story bg-light">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6">
