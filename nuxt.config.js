@@ -125,6 +125,10 @@ module.exports = {
             'faMobileAlt', 'faTabletAlt', 'faCodeBranch', 'faDonate',
           ],
         },
+        {
+          set: '@fortawesome/free-brands-svg-icons',
+          icons: ['faReact', 'faVuejs', 'faAngular'],
+        },
       ],
     }],
     // Markdown
