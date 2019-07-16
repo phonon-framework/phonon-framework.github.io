@@ -41,6 +41,38 @@ An accordion is a component that displays one of the collapsible elements in a l
 </div>
 ```
 
+## Open multiple collapses
+
+```html
+<div class="accordion" id="exampleAccordion2" data-config="multiple: true" role="tablist">
+  <a class="accordion-title" data-toggle="accordion" href="#collapseOneMultiple" aria-expanded="false" aria-controls="collapseOneMultiple">
+    Collapsible Group Item #1
+    <button class="collapse-toggle icon-plus" type="button">
+      <span class="icon"></span>
+    </button>
+  </a>
+
+  <div id="collapseOneMultiple" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+    <div class="card-body">
+      This is the content of the group item #1.
+    </div>
+  </div>
+
+  <a class="accordion-title" data-toggle="accordion" href="#collapseTwoMultiple" aria-expanded="false" aria-controls="collapseOne">
+    Collapsible Group Item #2
+    <button class="collapse-toggle icon-plus" type="button">
+      <span class="icon"></span>
+    </button>
+  </a>
+
+  <div id="collapseTwoMultiple" class="collapse" role="tabpane2" aria-labelledby="headingTwo">
+    <div class="card-body">
+      This is the content of the group item #2.
+    </div>
+  </div>
+</div>
+```
+
 ## JavaScript
 
 ```js
@@ -56,6 +88,13 @@ const accordion = phonon.accordion({
   element: '#exampleAccordion',
 });
 ```
+
+### Options
+
+|     Name     |     Description      |     Default value      |
+|----------------|----------------------|-------------------------|
+|    multiple      |  if `multiple` is set to true, multiple collapsible elements can be opened at the same time. | false |
+
 
 ### Methods
 
