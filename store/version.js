@@ -3,8 +3,10 @@ const latest = 'v2.0.0-alpha.2';
 export const state = () => ({
   current: latest,
   all: [
-    'v2.0.0-alpha.1',
+    // First version is the latest
     latest,
+    // Add older versions below
+    'v2.0.0-alpha.1',
   ],
 });
 
