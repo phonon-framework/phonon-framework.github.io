@@ -56,18 +56,22 @@ const imports = tree.reduce((acc, resource) => {
 const exported = tree.reduce((acc, resource, i) => {
   const name = getResourcePath(resource, '/');
   const importName = getResourcePath(resource, '', true);
+  let output = acc;
 
   if (i === 0) {
-    acc = 'export default {\n';
+    output = 'export default {\n';
   }
 
-  acc += `  '${name}': ${importName},\n`;
+  output += `  '${name}': ${importName},\n`;
 
   if (i === tree.length - 1) {
-    acc += '};';
+    output += '};';
   }
 
-  return acc;
+  // Add new empty line to meet Eslint rules
+  output += '\n';
+
+  return output;
 }, '');
 
 fs.writeFileSync(source, `${imports}\n\n${exported}`);
