@@ -205,7 +205,7 @@
               <pre>
                 <code class="font-size-sm">
 // For React, VueJS, Angular, ...
-require(&#x27;phonon/dist/js/phonon&#x27;);
+import &#x27;phonon&#x27;;
                 </code>
               </pre>
             </div>
@@ -259,7 +259,7 @@ require(&#x27;phonon/dist/js/phonon&#x27;);
               <pre>
                 <code class="font-size-sm">
 // All
-const phonon = require(&#x27;phonon/dist/js/phonon&#x27;);
+const phonon = require(&#x27;phonon&#x27;);
 // Component
 const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
                 </code>
@@ -551,7 +551,7 @@ const Modal = require(&#x27;phonon/dist/components/modal&#x27;);
 </template>
 
 <script>
-import phonon from 'phonon/dist/js/phonon';
+import phonon from 'phonon';
 import hljs from 'highlight.js/lib/highlight';
 import javascript from 'highlight.js/lib/languages/javascript';
 import xml from 'highlight.js/lib/languages/xml';
