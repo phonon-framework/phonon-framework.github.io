@@ -4,6 +4,7 @@ export const state = () => ({
   current: latest,
   all: [
     'v2.0.0-alpha.1',
+    latest,
   ],
 });
 
