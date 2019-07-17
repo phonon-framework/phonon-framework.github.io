@@ -1,9 +1,9 @@
-const latest = 'v2.0.0-alpha.1';
+const latest = 'v2.0.0-alpha.2';
 
 export const state = () => ({
   current: latest,
   all: [
-    latest,
+    'v2.0.0-alpha.1',
   ],
 });
 
