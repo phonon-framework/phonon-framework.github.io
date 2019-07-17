@@ -8,6 +8,8 @@
 </template>
 
 <script>
+// Import Phonon to enable components (TODO: fix by using external resource)
+import 'phonon/dist/js/phonon';
 import MarkdownDoc from '@/components/MarkdownDoc';
 import meta from '@/meta';
 import { capitalize } from '@/mixins';
